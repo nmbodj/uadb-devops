@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     stages {
-        stage('Build Docker Image') {
+        stage('Docker Version') {
             steps {
                 bat 'docker --version'
             }
