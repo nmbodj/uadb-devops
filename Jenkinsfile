@@ -7,9 +7,9 @@ pipeline {
                 bat 'docker --version'
             }
         }
-        stage('Test') {
+        stage('Build Docker Image') {
             steps {
-                echo 'Testing..'
+                bat 'docker build -t uadb-dev:1.0 .'
             }
         }
         stage('Deploy') {
