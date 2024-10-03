@@ -12,9 +12,15 @@ pipeline {
                 bat 'docker build -t uadb-dev:1.0 .'
             }
         }
-        stage('Deploy') {
+       
+         stage('Tag Docker Images') {
             steps {
-                echo 'Deploying....'
+                bat 'docker tag uadb-dev:1.0 bissimilahi/uadb-dev:1.0'
+            }
+        }
+         stage('Lister les images docker') {
+            steps {
+                bat 'docker images'
             }
         }
     }
